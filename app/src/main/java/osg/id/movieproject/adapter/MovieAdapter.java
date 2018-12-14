@@ -2,6 +2,7 @@ package osg.id.movieproject.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,42 +12,39 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
-import osg.id.movieproject.view.DetailActivity;
 import osg.id.movieproject.R;
 import osg.id.movieproject.model.Movies;
+import osg.id.movieproject.view.DetailActivity;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> {
 
-    private Context context;
-    private List<Movies> listMovies;
+    private final Context context;
+    private final List<Movies> listMovies;
 
-    public MovieAdapter(Context context, List<Movies> listMovies){
+    public MovieAdapter(Context context, List<Movies> listMovies) {
         this.context = context;
         this.listMovies = listMovies;
     }
 
+    @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_movie, null, false);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_movie, parent, false);
         RecyclerView.LayoutParams layoutParams = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         v.setLayoutParams(layoutParams);
         return new ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         final Movies movies = listMovies.get(position);
-        Glide.with(context)
-                .load(Contract.LINK_IMAGE + movies.getPosterPath())
-                .into(holder.gmb);
+        Glide.with(context).load(Contract.LINK_IMAGE + movies.getPosterPath()).into(holder.gmb);
         holder.judul.setText(movies.getTitle());
         holder.desc.setText(movies.getOverview());
         holder.tgl.setText(movies.getReleaseDate());
-
         holder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,14 +65,15 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         return listMovies.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        private ImageView gmb;
-        private CardView cv;
-        private TextView judul, tgl, desc;
+    class ViewHolder extends RecyclerView.ViewHolder {
+        private final ImageView gmb;
+        private final CardView cv;
+        private final TextView judul;
+        private final TextView tgl;
+        private final TextView desc;
 
-        public ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
-
             cv = itemView.findViewById(R.id.card_view);
             gmb = itemView.findViewById(R.id.movie_poster);
             judul = itemView.findViewById(R.id.movie_name);

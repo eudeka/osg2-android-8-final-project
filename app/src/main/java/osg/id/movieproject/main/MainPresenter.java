@@ -1,5 +1,7 @@
 package osg.id.movieproject.main;
 
+import android.content.Context;
+
 import java.util.List;
 
 import osg.id.movieproject.data.MovieDataSource;
@@ -8,18 +10,18 @@ import osg.id.movieproject.model.Movies;
 
 public class MainPresenter implements MainContract.Presenter {
 
-    private MovieRepository repository;
-    private MainContract.View view;
+    private final MovieRepository repository;
+    private final MainContract.View view;
 
-    public MainPresenter (MovieRepository repository, MainContract.View view) {
+    public MainPresenter(MovieRepository repository, MainContract.View view) {
         this.repository = repository;
         this.view = view;
     }
 
     @Override
-    public void getDataListMovies() {
+    public void getDataListMovies(Context context) {
         view.showProgress();
-        repository.getListMovies(new MovieDataSource.GetListMoviesCallback() {
+        repository.getListMovies(context, new MovieDataSource.GetListMoviesCallback() {
             @Override
             public void onSuccess(List<Movies> data) {
                 view.hideProgress();

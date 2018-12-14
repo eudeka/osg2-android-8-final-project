@@ -1,5 +1,7 @@
 package osg.id.movieproject.main;
 
+import android.content.Context;
+
 import java.util.List;
 
 import osg.id.movieproject.model.Movies;
@@ -14,7 +16,7 @@ public interface MainContract {
     }
 
     interface Presenter {
-        void getDataListMovies();
+        void getDataListMovies(Context context);
     }
 
 }

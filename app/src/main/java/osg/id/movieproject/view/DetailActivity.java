@@ -1,8 +1,8 @@
 package osg.id.movieproject.view;
 
+import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ImageView;
@@ -18,20 +18,17 @@ import osg.id.movieproject.adapter.Contract;
 public class DetailActivity extends AppCompatActivity {
 
     @BindView(R.id.poster)
-    ImageView tvImg;
+    public ImageView tvImg;
     @BindView(R.id.judul)
-    TextView tvJudul;
+    public TextView tvJudul;
     @BindView(R.id.desc)
-    TextView tvDesc;
+    public TextView tvDesc;
     @BindView(R.id.tgl)
-    TextView tvTgl;
+    public TextView tvTgl;
     @BindView(R.id.coordinatorLayout)
-    CoordinatorLayout coordinatorLayout;
+    public CoordinatorLayout coordinatorLayout;
     @BindView(R.id.toolbar)
-    Toolbar toolbar;
-
-    String img, judul, desc, tgl;
-    private long id;
+    public Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,19 +42,17 @@ public class DetailActivity extends AppCompatActivity {
         //untuk membuat tombol back button pada toolbar
         toolbar.setTitle("Detail Movie");
         setSupportActionBar(toolbar);
-        if(getSupportActionBar() != null)getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar() != null) getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
 
     private void setMovie() {
-        img = getIntent().getStringExtra("poster_path");
-        judul = getIntent().getStringExtra("title");
-        desc = getIntent().getStringExtra("overview");
-        tgl = getIntent().getStringExtra("release_date");
+        String img = getIntent().getStringExtra("poster_path");
+        String judul = getIntent().getStringExtra("title");
+        String desc = getIntent().getStringExtra("overview");
+        String tgl = getIntent().getStringExtra("release_date");
 
-        Glide.with(getApplicationContext())
-                .load(Contract.LINK_IMAGE+img)
-                .into(tvImg);
+        Glide.with(getApplicationContext()).load(Contract.LINK_IMAGE + img).into(tvImg);
         tvJudul.setText(judul);
         tvDesc.setText(desc);
         tvTgl.setText(tgl);
@@ -66,8 +61,8 @@ public class DetailActivity extends AppCompatActivity {
     //membuat animasi ketika melakukan tombol back
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case android.R.id.home : {
+        switch (item.getItemId()) {
+            case android.R.id.home: {
                 finish();
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                 break;

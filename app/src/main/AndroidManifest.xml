@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="osg.id.movieproject">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -12,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,8 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.DetailActivity"
-            android:theme="@style/AppTheme.SplashScreen"/>
+        <activity
+            android:name=".view.DetailActivity"
+            android:theme="@style/AppTheme.SplashScreen" />
     </application>
 
 </manifest>

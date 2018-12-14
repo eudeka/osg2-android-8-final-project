@@ -1,6 +1,5 @@
 package osg.id.movieproject.model;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -8,17 +7,16 @@ import java.util.List;
 public class ResponsMovies {
 
     @SerializedName("page")
-    @Expose
-    private int page;
+    private final int page;
+
     @SerializedName("total_results")
-    @Expose
-    private int totalResults;
+    private final int totalResults;
+
     @SerializedName("total_pages")
-    @Expose
-    private int totalPages;
+    private final int totalPages;
+
     @SerializedName("results")
-    @Expose
-    private List<Movies> movies = null;
+    private final List<Movies> movies;
 
     public ResponsMovies(int page, int totalResults, int totalPages, List<Movies> movies) {
         this.page = page;
