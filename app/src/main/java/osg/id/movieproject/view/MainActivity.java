@@ -3,7 +3,6 @@ package osg.id.movieproject.view;
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
@@ -12,33 +11,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
+import osg.id.movieproject.Injection;
 import osg.id.movieproject.R;
 import osg.id.movieproject.adapter.MovieAdapter;
 import osg.id.movieproject.main.MainContract;
+import osg.id.movieproject.main.MainPresenter;
 import osg.id.movieproject.model.Movies;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View {
 
-    @BindView(R.id.rvMovies)
+    @BindView(R.id.rv_movies)
     RecyclerView recyclerView;
 
     private ProgressDialog progressDialog;
     private MovieAdapter adapter;
     private List<Movies> moviesList = new ArrayList<>();
 
+    private MainPresenter mainPresenter = new MainPresenter(Injection.provideRepository(), this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ButterKnife.bind(this);
+
+        mainPresenter.getDataListMovies();
         initAdapter();
     }
 
     private void initAdapter() {
         adapter = new MovieAdapter(getApplicationContext(), moviesList);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
     }
 
