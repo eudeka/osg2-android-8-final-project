@@ -5,10 +5,10 @@ OSG batch kedua kali ini bertema tentang pemrograman Android Basic, dimana diper
 
 ## Sample Code Final Project
 Final Project di OSG2 Android Basic membahas tentang mengambil data movies dari <a href="https://www.themoviedb.org/">The Movie Db</a> untuk di tampilkan di aplikasi android. Sample code ini berisi:
-- Implementasi API dari <a href="https://www.themoviedb.org/">The Movie Db</a> untuk mengambil data secara remote (internet)
+- Implementasi API dari <a href="https://www.themoviedb.org/">The Movie Db</a> untuk mengambil data movies secara remote (internet)
 - Penggunaan RecyclerView, CardView, RelativeLayout, LinearLayout, ImageView, TextView
 - Implementasi Android Arsitektur, Konsep MVP, Repository Pattern
-- Implementasi Database SQLite + Room untuk mengambil data secara lokal
+- Implementasi Database SQLite + Room untuk mengambil data movies secara lokal
 
 ## Cara mendaftar Online Study Group
 OSG batch 2 sudah ditutup, namun jika tertarik untuk mengikuti OSG batch selanjutnya dengan materi yang lebih beragam, kamu dapat mengikuti Instagram kami ( [@educa62](https://instagram.com/educa62) ) atau melihat di [website kami](https://educa62.com).
