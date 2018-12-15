@@ -4,7 +4,7 @@ Online Study Group (OSG) educa62 merupakan sarana belajar online yang difasilita
 OSG batch kedua kali ini bertema tentang pemrograman Android Basic, dimana diperuntukkan untuk peserta yang ingin memulai membuat aplikasi Android mulai dari instalasi Android Studio hingga dapat membuat aplikasi sederhana.
 
 ## Sample Code Final Project
-Final Project di OSG2 Android Basic membahas tentang penggunaan Android Arsitektur, Konsep MVP, Repository Pattern dan Database SQLite dan Room. Sample code ini berisi:
+Final Project di OSG2 Android Basic membahas tentang mengambil data movies dari <a href="https://www.themoviedb.org/">The Movie Db</a> untuk di tampilkan di aplikasi android. Sample code ini berisi:
 - Implementasi API dari <a href="https://www.themoviedb.org/">The Movie Db</a>
 - Penggunaan RecyclerView, CardView, RelativeLayout, LinearLayout, ImageView, TextView
 - Implementasi Android Arsitektur, Konsep MVP, Repository Pattern
