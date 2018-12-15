@@ -5,7 +5,7 @@ OSG batch kedua kali ini bertema tentang pemrograman Android Basic, dimana diper
 
 ## Sample Code Final Project
 Final Project di OSG2 Android Basic membahas tentang penggunaan Android Arsitektur, Konsep MVP, Repository Pattern dan Database SQLite dan Room. Sample code ini berisi:
-- Implementasi API dari The Movie Db <a href="https://www.themoviedb.org/">Here</a>
+- Implementasi API dari <a href="https://www.themoviedb.org/">The Movie Db</a>
 - Penggunaan RecyclerView, CardView, RelativeLayout, LinearLayout, ImageView, TextView
 - Implementasi Android Arsitektur, Konsep MVP, Repository Pattern
 - Implementasi Database SQLite + Room untuk mengambil data secara lokal
