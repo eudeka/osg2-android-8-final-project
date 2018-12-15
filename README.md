@@ -9,7 +9,7 @@ Final Project di OSG2 Android Basic membahas tentang mengambil data movies dari 
 - Penggunaan Retrofit2 untuk mengambil data dari internet
 - Penggunaan OKHTTP untuk mengecek status pengambilan data dari internet
 - Penggunaan RecyclerView, CardView, RelativeLayout, LinearLayout, ImageView, TextView
-- Implementasi Android Arsitektur, Konsep MVP, Repository Pattern
+- Implementasi Konsep MVP, Repository Pattern
 - Implementasi Database SQLite + Room untuk mengambil data movies secara lokal
 
 ## Cara mendaftar Online Study Group
