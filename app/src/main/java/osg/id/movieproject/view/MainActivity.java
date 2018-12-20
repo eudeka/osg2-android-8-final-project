@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     private ProgressDialog progressDialog;
     private MovieAdapter adapter;
     private final List<Movies> moviesArrayList = new ArrayList<>();
-
     private final MainPresenter mainPresenter = new MainPresenter(Injection.provideRepository(), this);
 
     @Override
